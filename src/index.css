@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Force dark mode to use the .dark class in Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased font-sans transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-zinc-950 text-zinc-100;
+}
+
+/* Global transitions for theme-sensitive properties */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full hover:bg-gray-300 transition-colors;
+}
+
+/* Section Transitions */
+section {
+  @apply transition-all duration-700 ease-in-out;
+}
+
+.scroll-mt-32 {
+  scroll-margin-top: 8rem;
+}
+
+/* Smooth transitions for all theme-sensitive properties */
+* {
+  border-color: inherit;
+}
+
+.transition-theme {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-700;
+}

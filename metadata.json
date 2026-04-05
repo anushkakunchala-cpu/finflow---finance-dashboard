@@ -1,0 +1,5 @@
+{
+  "name": "FinFlow - Finance Dashboard SPA",
+  "description": "A clean and interactive frontend dashboard for tracking financial activity. Includes summary cards, transaction lists, role-based UI simulation, insights, and visualizations using static or mock data.",
+  "requestFramePermissions": []
+}
